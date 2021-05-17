@@ -5,8 +5,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+
+       <style th:inline="text">
+    body{
+        background: url{[[@{images/body-bg-2c.jpg}]]}
+                   no-repeat center center fixed;
+    }
+
+</style>
+
 </head>
 <body>
 <p align="center">Приветственная страница неавторизованных пользователей</p>
+<div class="bgwrapper">
+    <p align="center">main content</p>
+    <!--img th:src="@{images/body-bg-2c.jpg}"/-->
+</div>
 </body>
 </html>
