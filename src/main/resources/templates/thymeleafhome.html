@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+
+       <!--style th:inline="text">
+    body{
+        background: url{[[@{img/body-bg-2c.jpg}]]}
+                   no-repeat center center fixed;
+    }
+
+</style-->
+
+</head>
+<body>
+<p align="center">Приветственная страница неавторизованных пользователей</p>
+<a th:href="@{/basket}">Корзина</a>
+<a th:href="@{/product}">Страница товара</a>
+<a th:href="@{/order}">Оформить заказ</a>
+<a th:href="@{/admin}">Страница администратора</a>
+<div class="bgwrapper">
+    <p align="center">main content</p>
+    <div class="item">
+
+    </div>
+    <div class="item">
+
+    </div>
+    <div class="item">
+
+    </div>
+    <div class="item">
+
+    </div>
+    <div class="item">
+
+    </div>
+    <div class="item">
+
+    </div>
+    <!--img th:src="@{img/body-bg-2c.jpg}"/-->
+</div>
+</body>
+</html>
