@@ -46,7 +46,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
 
                 .authorizeRequests()
-                .antMatchers("/", "/home", "/login", "/basket", "/order", "/product", "img/**", "/css/**", "/static/**", "/images/**").permitAll()
+                .antMatchers("/", "/home", "/item1", "/item2", "/item3", "/item4", "/item5", "/item6",  "/login", "/basket/**", "/order", "/product/**", "img/**", "/css/**", "/static/**", "/images/**").permitAll()
                 .antMatchers(HttpMethod.POST, "/", "/home", "/login", "/basket", "/order", "/product", "/storage/**").permitAll()
                 .antMatchers(HttpMethod.PUT, "/storage/**").permitAll()
                 .anyRequest().authenticated()

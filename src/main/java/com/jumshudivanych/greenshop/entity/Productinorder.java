@@ -1,11 +1,9 @@
 package com.jumshudivanych.greenshop.entity;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
-public class Product {
+public class Productinorder {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -23,25 +21,27 @@ public class Product {
 
     private int quantity; // Количество товара
 
+    private Long basketId; // Номер корзины (Заказа)
 
-    public Product() {
+    public Productinorder() {
     }
 
-    public Product(String productName, Float price, String unit, String img, String productMessage, int quantity) {
+    public Productinorder(String productName, Float price, String unit, String img, String productMessage, int quantity, Long basketId) {
         this.productName = productName;
         this.price = price;
         this.unit = unit;
         this.img = img;
         this.productMessage = productMessage;
         this.quantity = quantity;
+        this.basketId = basketId;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public Long getBasketId() {
+        return basketId;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setBasketId(Long basketId) {
+        this.basketId = basketId;
     }
 
     public Long getId() {
@@ -91,4 +91,13 @@ public class Product {
     public void setProductMessage(String productMessage) {
         this.productMessage = productMessage;
     }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
 }
