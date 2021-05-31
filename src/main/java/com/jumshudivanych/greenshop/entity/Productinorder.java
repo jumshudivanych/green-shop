@@ -19,14 +19,14 @@ public class Productinorder {
 
     private String productMessage; //Описание товара
 
-    private int quantity; // Количество товара
+    private String quantity; // Количество товара
 
     private Long basketId; // Номер корзины (Заказа)
 
     public Productinorder() {
     }
 
-    public Productinorder(String productName, Float price, String unit, String img, String productMessage, int quantity, Long basketId) {
+    public Productinorder(String productName, Float price, String unit, String img, String productMessage, String quantity, Long basketId) {
         this.productName = productName;
         this.price = price;
         this.unit = unit;
@@ -92,12 +92,25 @@ public class Productinorder {
         this.productMessage = productMessage;
     }
 
-    public int getQuantity() {
+    public String getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(String quantity) {
         this.quantity = quantity;
     }
 
+    @Override
+    public String toString() {
+        return "Productinorder{" +
+                "id=" + id +
+                ", productName='" + productName + '\'' +
+                ", price=" + price +
+                ", unit='" + unit + '\'' +
+                ", img='" + img + '\'' +
+                ", productMessage='" + productMessage + '\'' +
+                ", quantity='" + quantity + '\'' +
+                ", basketId=" + basketId +
+                '}';
+    }
 }

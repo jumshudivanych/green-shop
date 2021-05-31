@@ -21,13 +21,13 @@ public class Product {
 
     private String productMessage; //Описание товара
 
-    private int quantity; // Количество товара
+    private String quantity; // Количество товара
 
 
     public Product() {
     }
 
-    public Product(String productName, Float price, String unit, String img, String productMessage, int quantity) {
+    public Product(String productName, Float price, String unit, String img, String productMessage, String quantity) {
         this.productName = productName;
         this.price = price;
         this.unit = unit;
@@ -36,11 +36,24 @@ public class Product {
         this.quantity = quantity;
     }
 
-    public int getQuantity() {
+    public String getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", productName='" + productName + '\'' +
+                ", price=" + price +
+                ", unit='" + unit + '\'' +
+                ", img='" + img + '\'' +
+                ", productMessage='" + productMessage + '\'' +
+                ", quantity='" + quantity + '\'' +
+                '}';
+    }
+
+    public void setQuantity(String quantity) {
         this.quantity = quantity;
     }
 

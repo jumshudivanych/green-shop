@@ -1,21 +1,29 @@
 package com.jumshudivanych.greenshop.controller;
 
 
+import com.jumshudivanych.greenshop.entity.Productinorder;
 import com.jumshudivanych.greenshop.repos.ProductRepository;
+import com.jumshudivanych.greenshop.repos.ProductinorderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import static org.aspectj.runtime.internal.Conversions.intValue;
 
 @Controller
 public class ProductController {
 
     @Autowired
     private ProductRepository repository;
+
+    @Autowired
+    private ProductinorderRepository productinorderRepository;
 
     @GetMapping("/product")
     public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
@@ -165,5 +173,15 @@ public class ProductController {
 
          */
         return "product";
+    }
+    //бработка формы с количеством заказываемого товара
+    @PostMapping("/product")
+    public String productQuantity(@RequestParam(name="productName", required=false) String productName, @RequestParam(name="quantity", required=false) String quantity, Model model) {
+
+        Productinorder productinorder = new Productinorder(productName, 30f, "кг", "/images", "Оплачено", quantity, 1l);
+        productinorderRepository.save(productinorder);
+        model.addAttribute("productName", productName);
+        model.addAttribute("quantity", quantity);
+        return "redirect:https://my.qiwi.com/Yvan-Llp8XPhAyz?noCache=true";
     }
 }

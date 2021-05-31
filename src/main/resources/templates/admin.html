@@ -9,5 +9,51 @@
 <body>
 <p align="center">страница администратора</p>
 <a th:href="@{/logout}">Выйти</a>
+<hr>
+Вывод заказов: <hr>
+<div th:text="${orders}"></div>
+<hr>
+Товары: <hr>
+<!--div th:text="${products}"></div-->
+<table>
+    <thead>
+    <tr>
+        <th> Title </th>
+        <th> Price </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${products.empty}">
+        <td colspan="2"> No Products Available </td>
+    </tr>
+
+    </tbody> <tr th:each="product : ${products}">
+    <td><span th:text="${product.id}"> productId </span></td>
+    <td><img th:src="@{${'/' + product.img}}"></td>
+    <td><span th:text="${product.productName}"> productName </span></td>
+    <td><span th:text="${product.price}"> price </span></td>
+</tr>
+</table>
+<br>
+
+<form th:action="@{/addProduct}" method="POST">
+    <input type="text" name="productName" placeholder="productName" />
+    <input type="text" name="price" placeholder="price" />
+    <input type="text" name="unit" placeholder="unit" />
+    <input type="text" name="img" placeholder="img" />
+    <input type="text" name="productMessage" placeholder="productMessage" />
+    <input type="text" name="quantity" placeholder="quantity" />
+    <button type="submit">Добавить товар</button>
+</form>
+<hr>
+Удалить товар
+<form th:action="@{/deleteProduct}" method="POST">
+    <input type="text" name="id" placeholder="product Id" />
+
+    <button type="submit">Удалить товар</button>
+</form>
+<hr>
+Удалить заказ
+
 </body>
 </html>

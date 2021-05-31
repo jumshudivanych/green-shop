@@ -95,9 +95,15 @@
                         <h2 th:text="${productName}">
 
                         </h2>
+                        <h3 th:text="${price} + ' руб. ' + ${unit}"></h3>
                     </div>
                     <p>
                         Выбор количества товара
+                        <form th:action="@{/product}" method="POST">
+                         <input type="hidden" name="productName" th:value="${productName}"/>
+                         <input type="text" name="quantity" placeholder="Кг."/>
+                         <button type="submit" value="Заказать">Заказать</button>
+                </form>
                     </p>
                     <a th:href="@{https://my.qiwi.com/Yvan-Llp8XPhAyz?noCache=true}" th:text="${productMessage}">
 
