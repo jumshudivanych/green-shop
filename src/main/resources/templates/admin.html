@@ -11,13 +11,40 @@
 <a th:href="@{/logout}">Выйти</a>
 <hr>
 Вывод заказов: <hr>
-<div th:text="${orders}"></div>
+<!--div th:text="${orders}"></div-->
+<table>
+    <thead>
+    <tr>
+        <th> Id </th>
+        <!--th> Img </th-->
+        <th> Наименование </th>
+        <th> Цена </th>
+        <th> Ед </th>
+        <th> Кол-во </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${orders.empty}">
+        <td colspan="2"> No Products Available </td>
+    </tr>
+
+    </tbody> <tr th:each="order : ${orders}">
+    <td><span th:text="${order.id}"> productId </span></td>
+    <!--td><img th:src="@{${'/' + product.img}}"></td-->
+    <td><span th:text="${order.productName}"> productName </span></td>
+    <td><span th:text="${order.price}"> price </span></td>
+    <td><span th:text="${order.unit}"> unit </span></td>
+    <td><span th:text="${order.quantity}"> quantity </span></td>
+</tr>
+</table>
 <hr>
 Товары: <hr>
 <!--div th:text="${products}"></div-->
 <table>
     <thead>
     <tr>
+        <th> Id </th>
+        <th> Img </th>
         <th> Title </th>
         <th> Price </th>
     </tr>

@@ -1,0 +1,295 @@
+.body1 { 
+  display: grid;
+  grid-template-areas: 
+    "header header header"
+    "item1 item2 item3"
+    "item4 item5 item6"
+    "footer footer footer";
+  grid-template-rows: 100px 1fr 1fr 60px;
+  grid-template-columns: 1fr 1fr 1fr;
+  /*grid-gap: 10px;*/
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+	background-image: url('file:///home/jumshud/Рабочий стол/studio/img/item1.jpg');
+	background-size: cover;
+	
+
+
+  }
+  .body2 { 
+  display: grid;
+  grid-template-areas: 
+    "header header header"
+    "item1 item2 item3"
+    "item4 item5 item6"
+    "footer footer footer";
+  grid-template-rows: 100px 1fr 1fr 60px;
+  grid-template-columns: 1fr 1fr 1fr;
+  /*grid-gap: 10px;*/
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+	background-image: url('file:///home/jumshud/Рабочий стол/studio/img/item2.jpg');
+	background-size: cover;
+	
+animation: blurredBanner 0s 1.5s ease-in-out forwards;
+filter: blur(5px);
+	/*opacity: 0;*/
+  }
+  
+  @keyframes blurredBanner {
+	0% {
+ 		/*opacity: 0; */
+ 		backdrop-filter: blur(0);
+	}
+	30% {
+		opacity: 1;
+		filter: blur(5px);
+	}
+	100% {
+		backdrop-filter: blur(10px);
+		filter: blur(0px);
+		opacity: 1;
+	}
+}
+  .body3 { 
+  display: grid;
+  grid-template-areas: 
+    "header header header"
+    "item1 item2 item3"
+    "item4 item5 item6"
+    "footer footer footer";
+  grid-template-rows: 100px 1fr 1fr 60px;
+  grid-template-columns: 1fr 1fr 1fr;
+  /*grid-gap: 10px;*/
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+	background-image: url('file:///home/jumshud/Рабочий стол/studio/img/item3.jpg');
+	background-size: cover;
+
+
+  }
+  .body4 { 
+  display: grid;
+  grid-template-areas: 
+    "header header header"
+    "item1 item2 item3"
+    "item4 item5 item6"
+    "footer footer footer";
+  grid-template-rows: 100px 1fr 1fr 60px;
+  grid-template-columns: 1fr 1fr 1fr;
+  /*grid-gap: 10px;*/
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+	background-image: url('file:///home/jumshud/Рабочий стол/studio/img/item4.jpg');
+	background-size: cover;
+	
+
+
+  }
+  .body5 { 
+  display: grid;
+  grid-template-areas: 
+    "header header header"
+    "item1 item2 item3"
+    "item4 item5 item6"
+    "footer footer footer";
+  grid-template-rows: 100px 1fr 1fr 60px;
+  grid-template-columns: 1fr 1fr 1fr;
+  /*grid-gap: 10px;*/
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+	background-image: url('file:///home/jumshud/Рабочий стол/studio/img/item5.jpg');
+	background-size: cover;
+
+
+  }
+  .body6 { 
+  display: grid;
+  grid-template-areas: 
+    "header header header"
+    "item1 item2 item3"
+    "item4 item5 item6"
+    "footer footer footer";
+  grid-template-rows: 100px 1fr 1fr 60px;
+  grid-template-columns: 1fr 1fr 1fr;
+  /*grid-gap: 10px;*/
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+	background-image: url('file:///home/jumshud/Рабочий стол/studio/img/item6.jpg');
+	background-size: cover;
+	
+  }
+
+  /* flex header  */
+  
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  /*padding: 0 30px;*/
+}
+
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  padding: 0;
+  margin: 0 -15px;
+}
+
+.logo {
+  flex-grow: 0.5;
+  /*margin: 10px 0 10px auto;*/
+  margin: 0 10px 0 auto;
+  padding: 0;
+  text-align: right;
+}
+
+.menu {
+  flex-grow: 0.5;
+  text-align: left;
+  margin: 0;
+  padding: 0 15px;
+}
+
+.logo__title {
+  display: inline-block;
+  font-size: 1.8rem;
+  line-height: 1.5rem;
+  vertical-align: bottom;
+}
+
+.logo__image {
+  vertical-align: bottom;
+}
+
+.menuRow{
+  display: inline-flex;
+  margin: 0 -15px;
+}
+
+.menuItem {
+ /* margin: 0 15px;*/
+  padding-bottom: 15px;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.menuItem:hover {
+/*	margin: 0 15px;*/
+  padding-bottom: 15px;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-left: 3px solid #e99d1a;
+  /*text-indent: 22px;*/
+  background-color: #767b80;
+}
+
+
+/* End flex header */
+/*body { 
+  display: grid;
+  grid-template-areas: 
+    "header header header"
+    "nav article ads"
+    "footer footer footer";
+  grid-template-rows: 60px 1fr 60px;
+  grid-template-columns: 20% 1fr 15%;
+  grid-gap: 10px;
+  height: 100vh;
+  margin: 0;
+  }*/
+header, footer, article, nav {
+  padding: 10px;
+  /*background: #f56262;*/
+  background-color: #333333;
+  opacity: 0.5; 
+  color: #fff;
+  
+}
+
+#pageHeader {
+  grid-area: header;
+}
+#pageFooter {
+  grid-area: footer;
+}
+#item1 { 
+  grid-area: item1;
+  /*border-left: 1px solid;*/
+  border-bottom: 1px solid;
+  color: #cccccc;
+   padding: 20px;      
+  }
+  #item1:hover {
+  	 background-color: #777777;
+    opacity: 0.5;  
+  }
+#item2 { 
+  grid-area: item2; 
+ 
+  color: #cccccc;
+   padding: 20px; 
+   border-left: 1px solid;
+  border-bottom: 1px solid;
+  }
+  #item2:hover {
+  	 background-color: #777777;
+    opacity: 0.5;  
+  }
+#item3 { 
+  grid-area: item3; 
+  
+  color: #cccccc; 
+   padding: 20px;
+   border-left: 1px solid;
+  border-bottom: 1px solid;
+  }
+  #item3:hover {
+  	 background-color: #777777;
+    opacity: 0.5;  
+  }
+#item4 { 
+  grid-area: item4; 
+  
+  color: #cccccc;
+   padding: 20px; 
+  }
+  #item4:hover {
+  	 background-color: #777777;
+    opacity: 0.5;  
+  }
+#item5 { 
+  grid-area: item5; 
+  
+  color: #cccccc; 
+   padding: 20px;
+   border-left: 1px solid;
+  }
+  #item5:hover {
+  	 background-color: #777777;
+    opacity: 0.5;  
+  }
+#item6 { 
+  grid-area: item6; 
+  
+  color: #cccccc; 
+   padding: 20px;
+    border-left: 1px solid;
+  }
+  #item6:hover {
+  	 background-color: #777777;
+    opacity: 0.5;  
+  }

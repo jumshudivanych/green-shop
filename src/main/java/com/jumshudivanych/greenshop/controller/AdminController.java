@@ -27,8 +27,9 @@ public class AdminController {
     public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
 
-        Iterable<Productinorder> productinorders = productinorderRepository.findAll();
-        model.addAttribute("orders", productinorders);
+        //Iterable<Productinorder> productinorders = productinorderRepository.findAll();
+        //model.addAttribute("orders", productinorders);
+        model.addAttribute("orders", productinorderRepository.findAll());
 
         //Iterable<Product> products = repository.findAll();
 

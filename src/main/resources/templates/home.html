@@ -46,6 +46,7 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="img-box">
+              <!--img th:src="@{images/slider-img.jpg}" alt=""-->
               <img th:src="@{images/slider-img.jpg}" alt="">
             </div>
           </div>
@@ -199,27 +200,13 @@
         </h2>
       </div>
     </div>
+
+
     <div class="container-fluid">
 
       <div class="fruit_container">
 
-
-        <div th:each="product : ${products}">
         <div class="box">
-          <img th:src="@{${product.img}}" alt="">
-          <div class="link_box">
-            <h5>
-              <div th:text="${product.productName}"></div>
-
-            </h5>
-            <!-- изменить ссылку -->
-            <a th:href="@{/item1}">
-              Купить Сейчас
-            </a>
-          </div>
-        </div>
-      </div>
-        <!--div class="box">
           <img th:src="@{/images/f-1.jpg}" alt="">
           <div class="link_box">
             <h5>
@@ -229,7 +216,7 @@
               Купить Сейчас
             </a>
           </div>
-        </div-->
+        </div>
         <div class="box">
           <img th:src="@{images/f-2.jpg}" alt="">
           <div class="link_box">

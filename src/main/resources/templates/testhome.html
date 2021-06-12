@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="jumshudivanych" />
+
+    <title>Магазин</title>
+
+    <link th:rel="stylesheet" type="text/css" th:href="@{css/main.css}" />
+    <style>
+         /* flex header  */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  /*padding: 0 30px;*/
+}
+
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  padding: 0;
+  margin: 0 -15px;
+}
+
+.logo {
+  flex-grow: 0.5;
+  /*margin: 10px 0 10px auto;*/
+  margin: 0 10px 0 auto;
+  padding: 0;
+  text-align: right;
+}
+
+.menu {
+  flex-grow: 0.5;
+  text-align: left;
+  margin: 0;
+  padding: 0 15px;
+}
+
+.logo__title {
+  display: inline-block;
+  font-size: 1.8rem;
+  line-height: 1.5rem;
+  vertical-align: bottom;
+}
+
+.logo__image {
+  vertical-align: bottom;
+}
+
+.menuRow{
+  display: inline-flex;
+  margin: 0 -15px;
+}
+
+.menuItem {
+ /* margin: 0 15px;*/
+  padding-bottom: 15px;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.menuItem:hover {
+/*	margin: 0 15px;*/
+  padding-bottom: 15px;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-left: 3px solid #e99d1a;
+  /*text-indent: 22px;*/
+  background-color: #767b80;
+}
+
+
+/* End flex header */
+    </style>
+    <!-- bootstrap core css -->
+    <!--link th:rel="stylesheet" type="text/css" th:href="@{css/bootstrap.css}" /-->
+
+    <!-- fonts style -->
+    <link th:href="@{https://fonts.googleapis.com/css?family=Baloo+Chettan|Dosis:400,600,700|Poppins:400,600,700&display=swap}" th:rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <!--link th:href="@{css/style.css}" th:rel="stylesheet" /-->
+    <!-- responsive style -->
+    <!--link th:href="@{css/responsive.css}" th:rel="stylesheet" /-->
+</head>
+
+<body>
+
+<header id="pageHeader">
+    <div class="container">
+        <div class="row">
+
+            <div class="menu">
+                <div class="menuRow">
+                    <a href="#" class="menuItem">Home</a>
+                    <a href="#" class="menuItem">About</a>
+                    <a href="#" class="menuItem">Team</a>
+                    <a href="#" class="menuItem">Portfolio</a>
+                    <a href="#" class="menuItem">Other</a>
+                    <a href="#" class="menuItem">Contact</a>
+                </div>
+            </div>
+
+            <div class="logo">
+                <!--img class="logo__image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAnCAYAAABNJBuZAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wcEDCgVK2T8OAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABCUlEQVRYw+2ZMQrCQBBFX6IIASGCB7DQAwiCkCOIYGVr64W8gbZiqyCmkhRWnsEDiOIBtBKWIUHRRN11BlLMDCQ8mL/zl3jNZgsXwseRyAMkAa7Gs7QRJAQiUYt0tBREQX4vygW/fwx0jHwLzIr4kPfmQgyBk6idgRoQABegZPSOQN220aoICFJy1YiC/PupVUR0gbaR74C9bSAVYANUjdoBaNg2WoGAuK+Ar2pkKuz/xEaxh8BI1EYuin0A9I18DqzzAEnEhWkF9ArUwUK4gOEja+M/OQafvAW+ZG10syuIgiiIgihIXhYl1efbBpLp820brUyfrxpREAVxC+QMxKIX29TzXPmrewMgOjArLLytFAAAAABJRU5ErkJggg==" -->
+                <div class="logo__title">From Future!</div>
+                <div class="logo__subtitle">Web Studio</div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<table>
+    <thead>
+    <tr>
+        <th> Id </th>
+        <th> Img </th>
+        <th> Title </th>
+        <th> Price </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${products.empty}">
+        <td colspan="2"> No Products Available </td>
+    </tr>
+
+    </tbody> <tr th:each="product : ${products}">
+    <td><span th:text="${product.id}"> productId </span></td>
+    <td><img th:src="@{${'/' + product.img}}"></td>
+    <td><span th:text="${product.productName}"> productName </span></td>
+    <td><span th:text="${product.price}"> price </span></td>
+    <td>
+        <form method="post" th:action="@{/basket}">
+            <input type="hidden" th:name="productName" th:value="${product.productName}">
+            <input type="hidden" th:name="price" th:value="${product.price}">
+            <input type="hidden" th:name="unit" th:value="${product.unit}">
+            <input type="hidden" th:name="img" th:value="${product.img}">
+            <input type="hidden" th:name="productMessage" th:value="${product.productMessage}">
+            <input type="hidden" th:name="quantity" th:value="${product.quantity}">
+            <button type="submit">Добавить в корзину</button>
+        </form>
+    </td>
+    <td><a th:href="@{'/basket' + ${product.id}}">Добавить в корзину</a></td>
+</tr>
+</table>
+
+</body>
+</html>
